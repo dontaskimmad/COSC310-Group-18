@@ -16,8 +16,8 @@ session_start()
 	<h1> ChatBot </h1>
 	<div class="main">
 		<div id="textfield"></div>
-		<form id="submitform">
-			<input type="text" id="submittxt" name="input" onkeyup="submitq()">
+		<form id="submitform" >
+			<input type="text" id="submittxt" name="input">
 			<input type="submit" id="submitbtn" name="submit" >
 		</form>
 		<p id="errormsg"></p>

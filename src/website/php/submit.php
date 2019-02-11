@@ -1,8 +1,7 @@
 <?php
-	include "acccessDB.php";
-	header('Content-Type: application/json');
+	include "accessDB.php";
 	
-	$q = $_REQUEST["q"];
+	$q = $_GET['q'];
 	$response = "";
 	
 	/* CODE FOR ROBOT GOES HERE */
