@@ -1,13 +1,9 @@
-window.onload = function(){
-	$("#submitbtn").click(submitq());
-}
-
 
 function submitq(){
-	var str = $("#submittxt").value;
-	console.log("Starting");
-	if (str == null){
-			$("#errormsg").innerHTML = "Enter Text"
+	var str = $("#submittxt").val();
+	console.log(str);
+	if (str.length == 0){
+			$("#errormsg").html("Enter Text");
 			return;
 	} else{
 		if(window.XMLHttpRequest){
