@@ -1,0 +1,17 @@
+.userpost{
+	float:				left;
+	margin-left:		5%;
+	clear:				right;
+}
+.botresponse{
+	float:				right;
+	margin-right:		5%;
+	clear:				left;
+}
+.chat{
+	line-height:		60%;
+	font-size:			80%;
+	background-color:	dimgrey;
+	border-radius:		1em;
+	padding:			0 1.5em 0 1.5em;
+}

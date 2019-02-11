@@ -1,0 +1,21 @@
+#submittxt{
+	position:			relative;
+	height:				3em;
+	width:				100%;
+	margin:				0 auto;
+	overflow:			auto;
+}
+#errormsg{
+	position:			absolute;
+	float:				left;
+	bottom:				0;
+}
+#submitbtn{
+	position:			relative;
+	float:				right;
+	margin-top:			1em;
+	text-align: 		center;
+    text-decoration: 	none;
+    font-size: 			1em;
+	color: 				black;
+}

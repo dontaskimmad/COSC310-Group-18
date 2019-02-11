@@ -4,7 +4,7 @@ $('#submitform').submit(function(e){
 	var str = $("#submittxt").val();
 	console.log(str);
 	if (str.length == 0){
-			$("#errormsg").html("Enter Text");
+			$("#errormsg").html("Please Enter Text");
 			return;
 	} else{
 		$('#errormsg').html("");
@@ -14,8 +14,8 @@ $('#submitform').submit(function(e){
 			data:	{q:str},
 			datatype: 'text',
 			success: function(data){
-				$("#textfield").append('<p class="userpost">'+ str + '</p>' );
-				$("#textfield").append('<p class="botresponse">' + data + '</p>');
+				$("#textfield").append('<div class="userpost chat"><h3>You</h3><p>'+ str + '</p></div>' );
+				$("#textfield").append('<div class="botresponse chat"><h3>Unknown</h3><p>' + data + '</p></div>');
 			}
 		});
 	}
