@@ -12,9 +12,6 @@ session_start()
 	<script type="text/javascript" src="../../scripts/submit.js"></script>
 </head>
 <body>
-<?php
-	include "accessDB.php";
-?>
 	<div class="main">
 		<h1> ChatBot </h1>
 		<!--Chat-->

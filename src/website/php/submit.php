@@ -4,7 +4,6 @@
 	
 	$q = $_GET['q'];
 	$response = "";
-	
 	/* CODE FOR ROBOT GOES HERE */
 	
 	if ($q !== ""){
