@@ -3,6 +3,9 @@
 	font-style: 		bold;
 	font-weight: 		bold;
 }
+p{
+	font-size:			1em;
+}
 h1, h2{
 	color:				black;
 	margin-left:		5%;
