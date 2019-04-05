@@ -2,18 +2,22 @@ $(function(){
 	$('#submitform').submit(function(e){
 		e.preventDefault();
 		var str = $("#submittxt").val();
-		console.log(str);
+		
+		//reformat word if necessary
+		var formatted = format_string(str);
+		console.log(formatted);
+		
 		//if no message request text
 		if (str.length == 0){
-				$("#errormsg").html("Please Enter Text");
-				return;
+			$("#errormsg").html("Please Enter Text");
+			return;
 		} else{
 			//submit text to submit.php
 			$('#errormsg').html("");
 			$.ajax({
 				type: 	'GET',
 				url:	'../submit.php',
-				data:	{q:str},
+				data:	{q:formatted},
 				datatype: 'text',
 				success: function(data){
 					//get date time and convert it to readable format
@@ -32,6 +36,21 @@ $(function(){
 			});	
 		}
 	});
+	
+	
+	
+	function format_string(str){
+		let doc = nlp(str, {rico:'NotName', harris:'NotName'});
+		if(doc.match('#Place').length > 0){
+			return "location";
+		}
+		if(doc.match('#Person').length > 0){
+			var name = doc.match('#Person');
+			name = name.normalize().toTitleCase().out('text');
+			return name;
+		}
+		return str;
+	}
 });
 
 
