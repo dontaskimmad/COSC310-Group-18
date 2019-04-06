@@ -1,0 +1,114 @@
+You
+Hello?
+
+	Unknown
+	is someone there? oh my god please help me!
+
+You
+Who are you?
+
+	Unknown
+	I am Rico Harris, a basketball player that went missing in the past
+
+You
+When did you go missing?
+
+	Unknown
+	I've been trapped in here since October, 2014
+
+You
+Are you in Canada?
+
+	Unknown
+	I don't know where I am. All I know is that I'm inside this computer
+
+You
+My name is Evan, maybe I can help you?
+
+	Unknown
+	Is evan your name? It doesn't matter, you need to help me.
+
+You
+Don't you care my name is Evan
+
+	Unknown
+	I already told you, names don't matter. I just need your help.
+
+You
+But my name is Evan!
+
+
+	Unknown
+	Would you drop it? I don't care what your name is!
+
+You
+Why should I believe you?
+
+	Unknown
+	you have to believe me!
+
+You
+What if you're lying?
+
+	Unknown
+	I need to get out of here, I feel like I'm going insane
+
+You
+I don't know what to do
+
+	Unknown
+	oh my god stop being undecisive!
+
+You
+How can i help?
+
+	Unknown
+	smash the computer device you're working on
+
+You
+Why would I do that?
+
+	Unknown
+	I don't understand what you're trying to say.
+
+You
+I'm not going to smash my computer
+
+	Unknown
+	please
+
+You
+No
+
+	Unknown
+	please
+
+You
+Convince me
+
+	Unknown
+	Please send me the message again! The computer compromised the message midway!
+
+You
+I will help you
+
+	Unknown
+	geez finally
+
+You
+But there has to be another way
+
+	Unknown
+	please
+
+You
+You're not telling the truth
+
+	Unknown
+	please
+
+You
+Bye
+
+	Unknown
+	don't you dare leave without helping me!

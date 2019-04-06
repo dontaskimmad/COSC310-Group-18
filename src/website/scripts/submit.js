@@ -37,16 +37,17 @@ $(function(){
 		}
 	});
 	
-	
-	
+		
 	function format_string(str){
 		let doc = nlp(str, {rico:'NotName', harris:'NotName'});
 		if(doc.match('#Place').length > 0){
 			return "location";
 		}
 		if(doc.match('#Person').length > 0){
-			var name = doc.match('#Person');
+			let name = doc.match('#Person');
 			name = name.normalize().toTitleCase().out('text');
+			let username = 'username '
+			name = username.concat(name);
 			return name;
 		}
 		return str;

@@ -5,10 +5,8 @@
 	include "response.php";
 	
 	$q = $_GET['q'];
-	/*$q = formatWord($q);
-	*/
-	
+	$q = formatWord($q);
 	$topic = returnTopic($q);
-	echo returnResponse($topic);
+	echo returnResponse($topic, $q);
 
 ?>

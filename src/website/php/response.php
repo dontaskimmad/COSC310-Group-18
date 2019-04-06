@@ -26,19 +26,21 @@ function returnTopic($q){
 	 
 	$topic = '';
 	
-	if ($q == 'username'){
+	if (strpos($q, 'usernam') !== false){
 		$topic = 'username';
-	} elseif (strpos($q, 'hello') !== false or strpos($q, 'hi') !== false) {
-		$topic = 'hello';
-	} elseif (strpos($q, 'where') !== false or strpos ($q,'place') !== false or strpos($q, 'location') !== false) {
+	} elseif (strpos($q, 'where') !== false or strpos ($q,'place') !== false or strpos($q, 'locat') !== false) {
 		$topic = 'location';
+	} elseif (strpos($q, 'when') !== false and strpos ($q, 'you') !== false){
+		$topic = 'when';
+	} elseif (strpos($q, 'who did this') !== false or strpos($q, 'by who') !== false) {
+		$topic ='who did this';
 	} elseif (strpos($q, 'wrong') !== false or strpos ($q,'go on') !== false) {
 		$topic = 'situation';
-	} elseif (strpos($q, 'who') !== false or strpos($q, 'name') !== false) {
+	} elseif (strpos($q, ' who ') !== false or strpos($q, 'name') !== false) {
 		$topic = 'identity';
-	} elseif (strpos($q, 'believe') !== false or strpos($q, 'trust') !== false) {
+	} elseif (strpos($q, 'believ') !== false or strpos($q, 'trust') !== false) {
 		$topic ='believe';
-	} elseif (strpos($q, 'lie') !== false) {
+	} elseif (strpos($q, ' lie ') !== false) {
 		$topic ='lie';
 	} elseif (strpos($q, 'how') !== false or strpos($q, 'want') !== false) {
 		$topic ='help method';
@@ -56,8 +58,6 @@ function returnTopic($q){
 		$topic ='not';
 	} elseif (strpos($q, 'are you') !== false) {
 		$topic ='are you';
-	} elseif (strpos($q, 'who did this') !== false or strpos($q, 'by who') !== false) {
-		$topic ='who did this';
 	} elseif (strpos($q, 'okay') !== false) {
 		$topic ='okay';
 	} elseif (strpos($q, 'alright') !== false) {
@@ -88,7 +88,7 @@ function returnTopic($q){
 		$topic ='rico';
 	} elseif (strpos($q, 'another way') !== false) {
 		$topic ='another way';
-	} elseif (strpos($q, 'story') !== false) {
+	} elseif (strpos($q, 'stori') !== false) {
 		$topic ='story';
 	} elseif (strpos($q, 'truth') !== false or strpos($q, 'true') !== false) {
 		$topic ='truth';
@@ -108,11 +108,11 @@ function returnTopic($q){
 		$topic ='help me';
 	} elseif (strpos($q, 'useless') !== false) {
 		$topic ='useless';
-	} elseif (strpos($q, 'insane') !== false) {
+	} elseif (strpos($q, 'insan') !== false) {
 		$topic ='insane';
-	} elseif (strpos($q, 'crazy') !== false) {
+	} elseif (strpos($q, 'craz') !== false) {
 		$topic ='crazy';
-	} elseif (strpos($q, 'funny') !== false) {
+	} elseif (strpos($q, 'funn') !== false) {
 		$topic ='funny';
 	} elseif (strpos($q, 'annoy') !== false) {
 		$topic ='annoy';
@@ -120,12 +120,13 @@ function returnTopic($q){
 		$topic ='lol';
 	} elseif (strpos($q, 'refuse') !== false) {
 		$topic ='refuse';
+	} elseif (strpos($q, 'hello') !== false or strpos($q, ' hi ') !== false) {
+		$topic = 'hello';
 	}
-	
 	return $topic;
 }
 
-function returnResponse($topic){
+function returnResponse($topic, $q){
 /*This is the list of possible responses, determined by the topic and its response number
 These are randomized using the rand(x,y) function, where x is the smallest possible integer
  and y is the largest, if you want to add some responses, just increment y by however many
@@ -266,6 +267,8 @@ responses you add. */
 		} elseif ($rnum == 2) {
 			$response ='finally';
 		}
+	}elseif ($topic == 'when'){
+		$response ='I\'ve been trapped in here since October, 2014';
 	} elseif ($topic == 'okay') {
 		$response = 'okay what?';
 	} elseif ($topic == 'how come') {
@@ -351,13 +354,15 @@ responses you add. */
 			$response ='please believe me!';
 		}
 	}elseif ($topic == 'username') {
-		if ($_SESSION["username"] == false){
-			$response = 'Is that your name? It doesn\'t matter, you need to help me.';
-			$_SESSION["username"] = true;
-		} else {
+		if ($_SESSION["username"] == 0){
+			$response = 'Is ' . ucfirst(substr($q, 8)) . ' your name? It doesn\'t matter, you need to help me.';
+			$_SESSION["username"] = 1;
+		} elseif ($_SESSION["username"] == 1){
 			$response = 'I already told you, names don\'t matter. I just need your help.';
+			$_SESSION["username"] = 2;
+		} else {
+			$response = 'Would you drop it? I don\'t care what your name is!';
 		}
-		
 	} elseif ($topic == '') {
 		$rnum = rand(1,5);
 		if ($rnum == 1){

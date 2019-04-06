@@ -1,0 +1,15 @@
+CSS Formatting is reproducable and would work for any number
+of webpages
+
+Javascript AJAX submit function could be applied to any 
+formsubmission button
+
+All bot response processing is based on methods and could be
+applied within any PHP code. All it needs is a string
+submission. 
+
+Application of Compromise NLP to format places and names is
+reproducable. 
+
+Base HTML Homepage is reproducable and could be used for any
+number of similar chat gui
