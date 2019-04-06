@@ -1,6 +1,5 @@
 <?php
 	//code for checking dictionary
-	include "accessDB.php";
 	$dictionary = "words.txt";
 	$dictionaryList = file_get_contents($dictionary);
 	$dictionarysplit = explode("\n", $dictionaryList);
@@ -269,6 +268,15 @@ past';
 }
 elseif ($rnum == 2) {
 	$response ='I am Rico Harris, a basketball player that went missing in the past';
+}
+	}
+
+	elseif ($topic == 'calm') {
+		if ($rnum == 1) {
+		$response = 'How can I stay calm in this situation?!';
+}
+elseif ($rnum == 2) {
+	$response ='How can I relax in this situation?!';
 }
 	}
 
