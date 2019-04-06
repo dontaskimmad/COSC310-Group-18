@@ -1,7 +1,7 @@
-<?php 
+<?php
 	$host = "localhost";
 	$database = "robot_database";
 	$user = "root";
-	$password = "";
+	$password = "your_password";
 	$table = "rdictionary";
 ?>

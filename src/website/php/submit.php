@@ -1,13 +1,28 @@
 <?php
 	//code for checking dictionary
 	include "accessDB.php";
-
-
+	$dictionary = "words.txt";
+	$dictionaryList = file_get_contents($dictionary);
+	$dictionarysplit = explode("\n", $dictionaryList);
 	$q = $_GET['q'];
+	$spellcheck = 0;
+	$qword = explode(" ", $q);
+	foreach($qword as $testword) {
+	foreach($dictionarysplit as $word) {
+		if (strcasecmp($testword,$word) == 0) {
+			$spellcheck+=1;
+			break;
+		}
+	}
+}
+
 	$topic = '';
 	$response = "";
 	$rnum = 0;
-
+	if ($spellcheck != count($qword)) {
+		echo "I received your message, but it has spelling errors! Please send it again properly!";
+		exit();
+	}
 	/* CODE FOR ROBOT GOES HERE */
 	/*strpos checks for keywords in a string */
 	/*This section checks the substring for keywords and sets a topic for the bot, which will
@@ -203,6 +218,30 @@ elseif (strpos($q, 'refuse') !== false or strpos ($q,'refuse') !== false) {
 $topic ='refuse';
 $rnum = 1;
 }
+elseif (strpos($q, 'old') !== false or strpos ($q,'age') !== false) {
+$topic ='age';
+$rnum = 1;
+}
+elseif (strpos($q, 'hobby') !== false or strpos ($q,'hobbies') !== false) {
+$topic ='hobby';
+$rnum = 1;
+}
+elseif (strpos($q, 'family') !== false or strpos ($q, 'sibling') !== false) {
+$topic ='family';
+$rnum = 1;
+}
+elseif (strpos($q, 'prove') !== false) {
+$topic ='proof';
+$rnum = 1;
+}
+elseif (strpos($q, 'terrible') !== false) {
+$topic ='terrible';
+$rnum = 1;
+}
+elseif (strpos($q, 'calm') !== false or strpos ($q, 'relax')) {
+$topic ='calm';
+$rnum = rand(1,2);
+}
 
 
 
@@ -236,6 +275,42 @@ elseif ($rnum == 2) {
 	elseif ($topic == 'help me') {
 		if ($rnum == 1) {
 		$response = 'I\'ll help you if you help me';
+}
+
+	}
+
+
+	elseif ($topic == 'proof') {
+		if ($rnum == 1) {
+		$response = 'I\'ll prove it to you if you can help me';
+}
+
+	}
+
+	elseif ($topic == 'terrible') {
+		if ($rnum == 1) {
+		$response = 'You have no idea. That\'s why you have to help me!';
+}
+
+	}
+
+	elseif ($topic == 'family') {
+		if ($rnum == 1) {
+		$response = 'My family consists of me my little brother and my mom and dad. It\'s a standard family really. I\'m sure they miss me greatly. That\'s why you have to help me!';
+}
+
+	}
+
+	elseif ($topic == 'hobby') {
+		if ($rnum == 1) {
+		$response = 'My hobby is playing basketball';
+}
+
+	}
+
+	elseif ($topic == 'age') {
+		if ($rnum == 1) {
+		$response = 'I don\'t even know my age anymore... I lost count';
 }
 
 	}
@@ -605,7 +680,19 @@ elseif ($rnum == 2) {
 
 
 	elseif ($topic == '') {
+		$rnum = rand(1,4);
+		if ($rnum ==1) {
 		$response = 'Please send me the message again! The computer compromised the message midway!';
+	}
+	elseif ($rnum == 2) {
+		$response = 'I\'m sorry, I didn\' quite get that, please send the message again';
+	}
+	elseif ($rnum == 3) {
+		$response = 'The computer intercepted the message midway! Please send it again!';
+	}
+	elseif ($rnum == 4) {
+		$response = 'Please send the message again! The computer caught on and has disposed your message!';
+	}
 	}
 
 	echo $response;

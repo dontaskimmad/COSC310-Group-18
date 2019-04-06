@@ -1,7 +1,7 @@
 <?php
 	include "../../database/db_credential.php";
 	global $host, $user, $password, $database, $table;
-	
+		
 	function returnWord($word){
 		//connect to database
 		$connection = mysqli_connect($host, $user, $password, $database);
@@ -24,6 +24,6 @@
 		$errorarray[] = "Could not find " . (string)$word;
 		return $errorarray;
 	}
-	
-	
+
+
 ?>
