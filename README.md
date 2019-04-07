@@ -31,7 +31,7 @@ Dictionary is taken from:
 https://github.com/dwyl/english-words
 
 New Features:
-- Added more keywords and responses (age, family/siblings, hobbies, etc) This is done to flesh out the bot's identity with more personal information about itself.
+-Added more keywords and responses (age, family/siblings, hobbies, etc) This is done to flesh out the bot's identity with more personal information about itself.
 This also allows the bot to respond to more topics which will streamline the chatting experience.
  
 -Added a spell check algorithm. This is done so that bot can process user input and respond appropriately if that input had any spelling errors. This allows the bot to communicate and understand the user better.
