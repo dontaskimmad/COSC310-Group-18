@@ -23,3 +23,6 @@ submit.php returns the bots response to the users text
 
 In scripts submit.js sends the users text to submit.php and turns the response 
 from bot as well as the users message into HTML
+
+Wiliam Setiawan
+33357161
