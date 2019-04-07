@@ -31,6 +31,7 @@ Dictionary is taken from:
 https://github.com/dwyl/english-words
 
 New Features:
+
 -Added more keywords and responses (age, family/siblings, hobbies, etc) This is done to flesh out the bot's identity with more personal information about itself.
 This also allows the bot to respond to more topics which will streamline the chatting experience.
  
